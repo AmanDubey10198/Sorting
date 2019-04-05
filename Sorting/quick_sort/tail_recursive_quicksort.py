@@ -10,7 +10,7 @@ def swap(a,b):
     return b,a
 
 def partition(x,start,end):
-    pivot = x[end]
+    pivot = x[end] # making the end element always the pivot
     pindex = start
     for i in range(start, end):
         if x[i] < pivot:
@@ -23,7 +23,7 @@ def tail_recursive_quicksort(A, start, end):
     while start < end:
         q = partition(A, start, end)
         print(A)
-        tail_recursive_quicksort(A,start,q - 1)
+        tail_recursive_quicksort(A,start,q - 1) #passing the last value means we are starting the value to be sorted from the tail.
         start = q + 1
     
 x = [7, 4, 2, 3, 9, 10, 7, 6]
